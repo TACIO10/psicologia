@@ -1,1 +1,0 @@
-Coloque aqui as prévias de 25s em MP3, com os nomes listados em app/app-demo.tsx.

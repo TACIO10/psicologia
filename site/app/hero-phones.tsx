@@ -3,14 +3,14 @@
 // Só visual — o celular interativo com som fica na seção "Amostras gratuitas".
 
 const listRows: [string, string, string][] = [
+  ["BP", "Bipolar Tipo I vs. Tipo II", "Psicopatologia"],
+  ["DEP", "Depressão vs. Distimia", "Psicopatologia"],
+  ["TAG", "TAG vs. Pânico", "Psicopatologia"],
+  ["TEPT", "Estresse Agudo vs. TEPT", "Psicopatologia"],
+  ["PSI", "Linha do Tempo Psicótica", "Psicopatologia"],
+  ["B", "Personalidade Cluster B", "Psicopatologia"],
+  ["DSM", "Psicopatologia Geral", "Psicopatologia"],
   ["216", "Cuidado em Liberdade", "Saúde Mental"],
-  ["CAPS", "Tipos de CAPS", "Saúde Mental"],
-  ["CEP", "Sete Princípios", "Ética Profissional"],
-  ["SIG", "Sigilo e Suas Exceções", "Ética Profissional"],
-  ["DOC", "Laudo ou Parecer?", "Avaliação Psicológica"],
-  ["SUS", "Princípios do SUS", "Saúde Pública"],
-  ["CRAS", "CRAS e CREAS", "Assistência Social"],
-  ["ECA", "ECA na Prática", "Psicologia Jurídica"],
 ];
 
 const playlists: [string, string][] = [
@@ -122,13 +122,13 @@ export function HeroPhones() {
             </div>
             <div className="hp-cover">
               <span className="hp-cover-ring" />
-              <span className="hp-cover-ic">Ψ</span>
+              <span className="hp-cover-ic">BP</span>
               <span className="hp-cover-bars"><i /><i /><i /><i /><i /><i /><i /></span>
             </div>
             <div className="hp-now-meta">
               <div>
-                <b>Cuidado em Liberdade</b>
-                <i>Saúde Mental · Faixa educativa</i>
+                <b>Bipolar I vs. II</b>
+                <i>Psicopatologia · DSM-5-TR</i>
               </div>
               <svg width="26" height="26" viewBox="0 0 24 24" fill="#1fd36b"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" /></svg>
             </div>
@@ -142,8 +142,8 @@ export function HeroPhones() {
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round"><path d="m17 1 4 4-4 4M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4M21 13v2a4 4 0 0 1-4 4H3" /></svg>
             </div>
             <div className="hp-next">
-              <span className="adm-ic sm">CAPS</span>
-              <span><i>A seguir</i><b>Tipos de CAPS</b></span>
+              <span className="adm-ic">DEP</span>
+              <span><i>A seguir</i><b>Depressão vs. Distimia</b></span>
             </div>
             <div className="adm-homebar" />
           </div>
@@ -154,7 +154,7 @@ export function HeroPhones() {
         <span className="sound-bars"><i /><i /><i /><i /><i /></span>
         <div>
           <small>Agora tocando</small>
-          <strong>Cuidado em Liberdade</strong>
+          <strong>Bipolar Tipo I vs. Tipo II</strong>
         </div>
       </div>
     </div>

@@ -182,9 +182,9 @@ export default function Home() {
       <section className="listen section" id="experimente">
         <div className="wrap narrow">
           <div className="section-heading center listen-heading">
-            <span className="eyebrow light">Por dentro do app</span>
-            <h2>Veja como as faixas ficam organizadas.</h2>
-            <p>Toque em uma faixa para ouvir a prévia. Cada tema do edital vira uma música curta, pronta para repetir.</p>
+            <span className="eyebrow light">Amostras gratuitas</span>
+            <h2>Ouça agora. Sem cadastro, sem compromisso.</h2>
+            <p>Estas são faixas reais do método, da playlist de Psicopatologia (DSM‑5‑TR). Toque em uma e comprove você mesma.</p>
           </div>
 
           <AppDemo base={asset} />

@@ -5,33 +5,16 @@ import { useEffect, useRef } from "react";
 // Réplica da tela "Todas as faixas" do app, dentro de um celular.
 // A lista rola sozinha e cada faixa toca uma prévia real de 25s
 // (arquivos em public/media/previews, recortados das músicas do app).
-// Prévias de 25s ficam em public/media/previews/psicologia/<arquivo>.mp3.
-// Enquanto um arquivo não existir, o player avisa que a faixa está na plataforma.
+// Prévias reais de 25s, recortadas das músicas do app
+// (arquivos em public/media/previews/psicologia).
 const tracks: [icon: string, title: string, topic: string, file: string][] = [
-  ["CEP", "Sete Princípios", "Ética Profissional", "sete-principios.mp3"],
-  ["SIG", "Sigilo e Suas Exceções", "Ética Profissional", "sigilo-e-suas-excecoes.mp3"],
-  ["4119", "A Lei da Profissão", "Legislação", "a-lei-da-profissao.mp3"],
-  ["CFP", "Sistema Conselhos", "Legislação", "sistema-conselhos.mp3"],
-  ["DOC", "Laudo ou Parecer?", "Avaliação Psicológica", "laudo-ou-parecer.mp3"],
-  ["SAT", "SATEPSI", "Avaliação Psicológica", "satepsi.mp3"],
-  ["AV", "Avaliação Passo a Passo", "Avaliação Psicológica", "avaliacao-passo-a-passo.mp3"],
-  ["216", "Cuidado em Liberdade", "Saúde Mental", "cuidado-em-liberdade.mp3"],
-  ["RAPS", "Rede de Atenção Psicossocial", "Saúde Mental", "rede-de-atencao-psicossocial.mp3"],
-  ["CAPS", "Tipos de CAPS", "Saúde Mental", "tipos-de-caps.mp3"],
-  ["RD", "Redução de Danos", "Saúde Mental", "reducao-de-danos.mp3"],
-  ["SUS", "Princípios do SUS", "Saúde Pública", "principios-do-sus.mp3"],
-  ["PTS", "Projeto Terapêutico Singular", "Saúde Pública", "projeto-terapeutico-singular.mp3"],
-  ["CRAS", "CRAS e CREAS", "Assistência Social", "cras-e-creas.mp3"],
-  ["PAIF", "PAIF e PAEFI", "Assistência Social", "paif-e-paefi.mp3"],
-  ["FP", "Funções Psíquicas", "Psicopatologia", "funcoes-psiquicas.mp3"],
-  ["DSM", "DSM e CID", "Psicopatologia", "dsm-e-cid.mp3"],
-  ["Ψ", "Fases Psicossexuais", "Psicanálise", "fases-psicossexuais.mp3"],
-  ["TCC", "Pensamentos Automáticos", "TCC", "pensamentos-automaticos.mp3"],
-  ["PIA", "Estágios de Piaget", "Desenvolvimento", "estagios-de-piaget.mp3"],
-  ["ZDP", "Zona de Desenvolvimento Proximal", "Desenvolvimento", "zona-de-desenvolvimento-proximal.mp3"],
-  ["ECA", "ECA na Prática", "Psicologia Jurídica", "eca-na-pratica.mp3"],
-  ["DE", "Depoimento Especial", "Psicologia Jurídica", "depoimento-especial.mp3"],
-  ["R&S", "Recrutamento e Seleção", "Organizacional", "recrutamento-e-selecao.mp3"],
+  ["BP", "Bipolar Tipo I vs. Tipo II", "Psicopatologia", "bipolar-tipo-i-vs-tipo-ii.mp3"],
+  ["DEP", "Depressão vs. Distimia", "Psicopatologia", "depressao-maior-vs-distimia.mp3"],
+  ["TAG", "TAG vs. Pânico", "Psicopatologia", "tag-vs-panico.mp3"],
+  ["TEPT", "Estresse Agudo vs. TEPT", "Psicopatologia", "estresse-agudo-vs-tept.mp3"],
+  ["PSI", "Linha do Tempo Psicótica", "Psicopatologia", "linha-do-tempo-psicotica.mp3"],
+  ["B", "Personalidade Cluster B", "Psicopatologia", "personalidade-cluster-b.mp3"],
+  ["DSM", "Psicopatologia Geral", "Psicopatologia", "psicopatologia-dsm-5-tr.mp3"],
 ];
 
 const PLAY = <path d="M7 4l13 8-13 8z" />;
@@ -252,7 +235,7 @@ export function AppDemo({ base = "" }: { base?: string }) {
             </div>
 
             <div className="adm-player" aria-live="polite">
-              <span className="adm-ic">Ψ</span>
+              <span className="adm-ic">BP</span>
               <span className="adm-ptx"><b>—</b><i>Prévia 0:00 / 0:25</i></span>
               <button className="adm-pp" type="button" aria-label="Pausar">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">{PAUSE}</svg>
