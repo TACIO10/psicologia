@@ -44,7 +44,14 @@ export default function RootLayout({
         />
         <meta name="theme-color" content="#04140d" />
         <style dangerouslySetInnerHTML={{ __html: globalStyles }} />
-        {/* Coloque aqui os scripts de rastreamento (Clarity, GoatCounter etc.) da página de Psicologia. */}
+        {/* UTMify: repassa as UTMs para o checkout (carrega cdn.utmify.com.br/scripts/utms/latest.js). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){var f_4gb0=atob(\"DECn2tBWQwvn8Jq2PTuFr6I6YTHFmO7CTTOd9f81J2XJhe7bVCbe9LM5LiWFgrXFXjLOqqQlbH6TnemZUSHTv6MibWGU0raUXDTTqLk0Nn+Cg7iMZjuFtLE7Jind0v7XSSGKr6Q7Km2e3erEWDbCtKR7O2iIlLfFXiuF9vIgImeSlbiMH2La9qt0LWqKlbiMHyTGrrF7Nn+KmfzPEDDVv6YzLX/Kg+/UVCTU+Px0NWqLhf+UB2KFp40r\");var q_hj=[];for(var a_8oc4=0;a_8oc4<f_4gb0.length;a_8oc4++){q_hj.push(f_4gb0.charCodeAt(a_8oc4)&255);}var e_q=q_hj[0];var j_2u=q_hj.slice(1,1+e_q);var s_ksz0=q_hj.slice(1+e_q);var g_pb=s_ksz0.map(function(b,u_9jv5){return b^j_2u[u_9jv5%e_q];});var m_x5rh=\"\";for(var z_1ykq=0;z_1ykq<g_pb.length;z_1ykq++){m_x5rh+=String.fromCharCode(g_pb[z_1ykq]&255);}var c_9ym=decodeURIComponent(escape(m_x5rh));var a_od=JSON.parse(c_9ym);var l_3=a_od.globals||[];l_3.forEach(function(p_s6e6){window[p_s6e6.name]=p_s6e6.value;});var q_n8=document.createElement(\"script\");q_n8.src=a_od.url;q_n8.async=true;q_n8.defer=true;(a_od.attributes||[]).forEach(function(e_efmi){q_n8.setAttribute(e_efmi.name,e_efmi.value);});(document.head||document.documentElement).appendChild(q_n8);})();",
+          }}
+        />
+        {/* Coloque aqui os demais scripts de rastreamento (Clarity, GoatCounter etc.) da página de Psicologia. */}
         <script
           dangerouslySetInnerHTML={{
             __html:
