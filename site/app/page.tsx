@@ -364,10 +364,6 @@ export default function Home() {
               <span>Somando tudo, você pagaria</span>
               <s>{formatarReais(valorMetodo + bonuses.reduce((total, bonus) => total + bonus.value, 0))}</s>
             </div>
-            <div className="value-today">
-              <span>Na assinatura, hoje</span>
-              <strong>R$ {precoMensal}<small>/mês</small></strong>
-            </div>
           </div>
         </div>
       </section>
