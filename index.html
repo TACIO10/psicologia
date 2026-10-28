@@ -210,7 +210,7 @@
   #hero .hero__star { fill: var(--color-4); }
   #hero .hero__tick { fill: none; stroke: var(--color-7); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
   #hero .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; margin-top: 0.5rem; }
-  @media (prefers-reduced-motion: no-preference) {
+  @media (min-width: 9999em) {
     #hero .hero__intro { animation: hero-rise 1s cubic-bezier(0.16, 0.84, 0.3, 1) backwards; }
     #hero .hero__media img { animation: hero-settle 1.2s cubic-bezier(0.16, 0.84, 0.3, 1) backwards; }
     #hero .hero__arc { stroke-dasharray: 1; animation: hero-draw 1.2s cubic-bezier(0.5, 0, 0.2, 1) backwards; }
@@ -290,7 +290,7 @@
 </style>
 <style data-8b-part="scene-style:listen">
 @layer scenes {
-  @media (prefers-reduced-motion: no-preference) {
+  @media (min-width: 9999em) {
     #listen.is-staged .listen__hold { height: 250vh; }
     #listen.is-staged .listen__stage { position: sticky; top: 0; display: flex; flex-direction: column; justify-content: center; height: 100vh; padding-block: 5.5rem 2rem; }
   }
@@ -419,7 +419,7 @@
 </style>
 <style data-8b-part="scene-style:rooms">
 @layer scenes {
-  @media (prefers-reduced-motion: no-preference) {
+  @media (min-width: 9999em) {
     #rooms.is-track .rooms__hold { height: calc(100vh + var(--rooms-travel, 0px) * 1.5); padding-bottom: 0; }
     #rooms.is-track .rooms__stage { position: sticky; top: 0; display: flex; flex-direction: column; justify-content: center; height: 100vh; padding-top: 4.5rem; overflow: hidden; }
     #rooms.is-track .rooms__track { display: flex; width: max-content; max-width: none; margin: 0; gap: clamp(1rem, 2.4vw, 2.25rem); padding-inline: var(--space-1); }
@@ -493,7 +493,7 @@
 </style>
 <style data-8b-part="scene-style:setup">
 @layer scenes {
-  @media (prefers-reduced-motion: no-preference) {
+  @media (min-width: 9999em) {
     #setup.is-stacked .setup__card { position: sticky; top: calc(var(--page-nav-h, 5.5rem) + var(--setup-i) * 1.25rem); }
     @media (max-width: 47.99rem) {
       #setup.is-stacked .setup__card { top: calc(var(--page-nav-h, 5.25rem) + var(--setup-i) * 0.75rem); }
@@ -543,7 +543,7 @@
 </style>
 <style data-8b-part="scene-style:start">
 @layer scenes {
-  @media (prefers-reduced-motion: no-preference) {
+  @media (min-width: 9999em) {
     #start.is-transcribing .start__word { position: relative; color: color-mix(in srgb, currentColor calc(100% - var(--bar, 0) * 100%), transparent); }
     #start.is-transcribing .start__word::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 56%; translate: 0 -50%; border-radius: 0.25rem; background: repeating-linear-gradient(90deg, var(--color-4) 0 0.25rem, transparent 0.25rem 0.5rem); opacity: var(--bar, 0); scale: 1 var(--bar, 0); }
   }
@@ -561,6 +561,19 @@
   #contact .contact__ways { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
   #contact .contact__ways li { display: grid; gap: 0.375rem; align-content: start; }
   #contact .contact__ways .m-text-6 { color: var(--color-5); }
+  #calls .calls__item { min-height: 0; padding-block: 1.5rem; }
+  #calls .calls__grid { align-items: center; }
+  #calls .calls__sticky { position: static; }
+  @media (max-width: 47.99rem) {
+    #calls .calls__aside, #calls .calls__list { grid-area: auto; }
+    #calls .calls__aside { display: block; margin-top: 2.5rem; }
+    #calls .calls__item { min-height: 0; padding-top: 1.25rem; }
+    #calls .calls__list { padding-bottom: 0; }
+    #calls .phone { font-size: 0.85rem; }
+    #calls .phone__bar { display: grid; }
+    #calls .calls__sticky { justify-content: center; }
+    #calls .calls__sticky { position: static; }
+  }
   #contact .contact__form { display: grid; gap: 1.25rem; padding: clamp(1.5rem, 3.5vw, 2.75rem); border-radius: var(--radius-2); background: var(--color-2); }
   #contact .contact__form .m-btn-2 { justify-self: start; }
   #contact .contact__status:empty { display: none; }
@@ -1193,7 +1206,7 @@ function refreshScroll() {
   ScrollTrigger.sort();
   ScrollTrigger.refresh();
 }
-gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+gsap.matchMedia().add('(min-width: 9999em)', () => {
   const bar = document.querySelector('#nav .nav__bar');
   const lenis = window.lenis = new Lenis({ lerp: 0.085, anchors: { offset: -(bar ? Math.ceil(bar.getBoundingClientRect().bottom) : 0) } });
   const tick = time => lenis.raf(time * 1000);
@@ -1239,7 +1252,7 @@ document.querySelectorAll('[data-8b-section]').forEach(section => {
   const headings = section.querySelectorAll('[data-8b-motion~="captionIn"]');
   if (headings.length) {
     const id = `effect:captionIn:${section.id}`;
-    queueMotion(() => gsap.matchMedia().add({ wide: '(min-width: 48rem) and (prefers-reduced-motion: no-preference)', narrow: '(max-width: 47.99rem) and (prefers-reduced-motion: no-preference)' }, () => {
+    queueMotion(() => gsap.matchMedia().add({ wide: '(min-width: 48rem) and (min-width: 9999em)', narrow: '(max-width: 47.99rem) and (min-width: 9999em)' }, () => {
       headings.forEach((heading, index) => {
         if (captionPlayed.has(heading)) return;
         const timeline = effects.captionIn(heading, { paused: true });
@@ -1250,14 +1263,14 @@ document.querySelectorAll('[data-8b-section]').forEach(section => {
   const reads = section.querySelectorAll('[data-8b-motion~="readAlong"]');
   if (reads.length) {
     const id = `effect:readAlong:${section.id}`;
-    queueMotion(() => gsap.matchMedia().add({ wide: '(min-width: 48rem) and (prefers-reduced-motion: no-preference)', narrow: '(max-width: 47.99rem) and (prefers-reduced-motion: no-preference)' }, () => {
+    queueMotion(() => gsap.matchMedia().add({ wide: '(min-width: 48rem) and (min-width: 9999em)', narrow: '(max-width: 47.99rem) and (min-width: 9999em)' }, () => {
       reads.forEach((element, index) => ScrollTrigger.create({ id: `${id}:${index}`, trigger: element, start: 'top 88%', end: 'bottom 60%', scrub: true, animation: effects.readAlong(element) }));
     }), timing(id));
   }
   const bands = section.querySelectorAll('[data-8b-motion~="bandRise"]');
   if (bands.length) {
     const id = `effect:bandRise:${section.id}`;
-    queueMotion(() => gsap.matchMedia().add({ wide: '(min-width: 48rem) and (prefers-reduced-motion: no-preference)', narrow: '(max-width: 47.99rem) and (prefers-reduced-motion: no-preference)' }, () => {
+    queueMotion(() => gsap.matchMedia().add({ wide: '(min-width: 48rem) and (min-width: 9999em)', narrow: '(max-width: 47.99rem) and (min-width: 9999em)' }, () => {
       bands.forEach((sheet, index) => ScrollTrigger.create({ id: `${id}:${index}`, trigger: section, start: 'top bottom', end: 'top 25%', scrub: true, animation: effects.bandRise(sheet) }));
     }), timing(id));
   }
@@ -1269,7 +1282,7 @@ queueMotion(() => {
   const copy = hero.querySelector('.hero__copy');
   const talk = hero.querySelector('.hero__talk');
   const media = hero.querySelector('.hero__media');
-  gsap.matchMedia().add({ wide: '(min-width: 48rem) and (prefers-reduced-motion: no-preference)', narrow: '(max-width: 47.99rem) and (prefers-reduced-motion: no-preference)' }, context => {
+  gsap.matchMedia().add({ wide: '(min-width: 48rem) and (min-width: 9999em)', narrow: '(max-width: 47.99rem) and (min-width: 9999em)' }, context => {
     const { wide } = context.conditions;
     if (!adjacent('hero', 'listen')) return;
     gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { id: 'hero:exit', trigger: hero, start: 'bottom bottom', end: 'bottom 20%', scrub: true, invalidateOnRefresh: true } })
@@ -1290,7 +1303,7 @@ queueMotion(() => {
   const voiceTrack = root.querySelector('.listen__track--voice');
   const rows = [...root.querySelectorAll('.listen__track--read > .listen__row')];
   const bars = [...root.querySelectorAll('.listen__wave > i')];
-  gsap.matchMedia().add({ wide: '(min-width: 48rem) and (prefers-reduced-motion: no-preference)', narrow: '(max-width: 47.99rem) and (prefers-reduced-motion: no-preference)' }, context => {
+  gsap.matchMedia().add({ wide: '(min-width: 48rem) and (min-width: 9999em)', narrow: '(max-width: 47.99rem) and (min-width: 9999em)' }, context => {
     const { wide } = context.conditions;
     if (adjacent('hero', 'listen')) {
       gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { id: 'listen:entry', trigger: root, start: 'top bottom', end: 'top 20%', scrub: true, invalidateOnRefresh: true } })
@@ -1349,7 +1362,7 @@ queueMotion(() => {
   const items = [...list.children];
   const device = root.querySelector('.calls__device');
   const steps = items.map((item, index) => [...root.querySelectorAll(`.phone [data-step="${index + 1}"]`)]);
-  gsap.matchMedia().add({ wide: '(min-width: 48rem) and (prefers-reduced-motion: no-preference)', narrow: '(max-width: 47.99rem) and (prefers-reduced-motion: no-preference)' }, context => {
+  gsap.matchMedia().add({ wide: '(min-width: 48rem) and (min-width: 9999em)', narrow: '(max-width: 47.99rem) and (min-width: 9999em)' }, context => {
     const { wide } = context.conditions;
     const line = wide ? '58%' : '52%';
     const timeline = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { id: 'calls', trigger: items[0], start: `top ${line}`, endTrigger: items[items.length - 1], end: `bottom ${line}`, scrub: true } });
@@ -1384,7 +1397,7 @@ queueMotion(() => {
     for (let node = element; node && node !== stop; node = node.offsetParent) { x += node.offsetLeft; y += node.offsetTop; }
     return { x, y };
   };
-  gsap.matchMedia().add({ wide: '(min-width: 48rem) and (prefers-reduced-motion: no-preference)', narrow: '(max-width: 47.99rem) and (prefers-reduced-motion: no-preference)' }, () => {
+  gsap.matchMedia().add({ wide: '(min-width: 48rem) and (min-width: 9999em)', narrow: '(max-width: 47.99rem) and (min-width: 9999em)' }, () => {
     if (adjacent('calls', 'tune')) {
       const calls = document.getElementById('calls');
       const aside = calls.querySelector('.calls__aside');
@@ -1438,7 +1451,7 @@ queueMotion(() => {
   const track = root.querySelector('.rooms__track');
   const places = [...track.querySelectorAll('.rooms__place')];
   const lines = root.querySelectorAll('.rooms__line');
-  gsap.matchMedia().add({ wide: '(min-width: 48rem) and (prefers-reduced-motion: no-preference)', narrow: '(max-width: 47.99rem) and (prefers-reduced-motion: no-preference)' }, context => {
+  gsap.matchMedia().add({ wide: '(min-width: 48rem) and (min-width: 9999em)', narrow: '(max-width: 47.99rem) and (min-width: 9999em)' }, context => {
     const { wide } = context.conditions;
     root.classList.add('is-track');
     const travel = () => Math.max(0, track.scrollWidth - innerWidth);
@@ -1469,7 +1482,7 @@ queueMotion(() => {
   const cols = [...root.querySelectorAll('.voices__col')];
   const cards = [...root.querySelectorAll('.voices__col > li')];
   const photo = root.querySelector('.voices__photo img');
-  gsap.matchMedia().add({ wide: '(min-width: 48rem) and (prefers-reduced-motion: no-preference)', narrow: '(max-width: 47.99rem) and (prefers-reduced-motion: no-preference)' }, context => {
+  gsap.matchMedia().add({ wide: '(min-width: 48rem) and (min-width: 9999em)', narrow: '(max-width: 47.99rem) and (min-width: 9999em)' }, context => {
     const { wide } = context.conditions;
     if (wide) {
       cols.forEach((col, index) => gsap.fromTo(col, { y: () => innerHeight * (index ? 0.42 : 0.14) }, { y: 0, ease: 'none', scrollTrigger: { id: `voices:col-${index}`, trigger: colsBox, start: 'top bottom', end: 'top 18%', scrub: true, invalidateOnRefresh: true } }));
@@ -1485,7 +1498,7 @@ queueMotion(() => {
   const root = document.getElementById('setup');
   const steps = root.querySelector('.setup__steps');
   const cards = [...steps.children];
-  gsap.matchMedia().add({ wide: '(min-width: 48rem) and (prefers-reduced-motion: no-preference)', narrow: '(max-width: 47.99rem) and (prefers-reduced-motion: no-preference)' }, () => {
+  gsap.matchMedia().add({ wide: '(min-width: 48rem) and (min-width: 9999em)', narrow: '(max-width: 47.99rem) and (min-width: 9999em)' }, () => {
     root.classList.add('is-stacked');
     const gap = () => parseFloat(getComputedStyle(steps).rowGap) || 0;
     const natural = index => cards.slice(0, index).reduce((sum, card) => sum + card.offsetHeight + gap(), 0);
@@ -1503,7 +1516,7 @@ queueMotion(() => {
   const frame = root.querySelector('.start__window');
   const image = frame.querySelector('img');
   const heading = root.querySelector('.start__copy h2');
-  gsap.matchMedia().add({ wide: '(min-width: 48rem) and (prefers-reduced-motion: no-preference)', narrow: '(max-width: 47.99rem) and (prefers-reduced-motion: no-preference)' }, context => {
+  gsap.matchMedia().add({ wide: '(min-width: 48rem) and (min-width: 9999em)', narrow: '(max-width: 47.99rem) and (min-width: 9999em)' }, context => {
     const { wide } = context.conditions;
     const radius = restRadius(frame);
     const sideX = wide ? 31 : 12;
@@ -1523,7 +1536,7 @@ queueMotion(() => {
   const brand = root.querySelector('.footer__brand');
   const word = root.querySelector('.footer__word');
   const strokes = root.querySelectorAll('.footer__logo path');
-  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+  gsap.matchMedia().add('(min-width: 9999em)', () => {
     gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { id: 'footer', trigger: brand, start: 'top bottom', end: 'bottom bottom', scrub: true } })
       .fromTo(word, { yPercent: 70 }, { yPercent: 0 }, 0)
       .fromTo(strokes, { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, stagger: 0.15 }, 0);
