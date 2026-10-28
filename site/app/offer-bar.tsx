@@ -32,7 +32,7 @@ export function OfferBar({ parcelamento }: { parcelamento: string }) {
     <a
       className="offer-bar"
       href="#oferta"
-      aria-label={`Oferta por tempo limitado: Plano Anual por ${parcelamento}. Ver planos.`}
+      aria-label={`Oferta por tempo limitado: acesso completo por ${parcelamento}. Ver oferta.`}
     >
       <span className="offer-bar-inner">
         <span aria-hidden="true">🔥</span>
@@ -40,7 +40,7 @@ export function OfferBar({ parcelamento }: { parcelamento: string }) {
         <span className="offer-clock">{formatar(restante)}</span>
         <span className="offer-sep" aria-hidden="true">·</span>
         <span>
-          <span className="offer-plan">Plano Anual por </span>
+          <span className="offer-plan">Acesso completo por </span>
           <strong>{parcelamento}</strong>
         </span>
       </span>
