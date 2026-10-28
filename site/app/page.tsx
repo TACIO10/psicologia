@@ -15,7 +15,7 @@ const formatarReais = (valor: number) => `R$ ${valor.toLocaleString("pt-BR")}`;
 
 // Cole aqui o link do checkout de R$ 47/mês. Enquanto estiver vazio, o botão
 // abre o WhatsApp com a mensagem de assinatura.
-const checkout47 = "";
+const checkout47 = "https://checkout.payt.com.br/b17b60c3521a34527a4c49d7173e4fa4";
 const whatsappAssinar =
   "https://wa.me/5516992344060?text=" +
   encodeURIComponent("Olá! Quero assinar a Memória Musical para concursos de Psicologia por R$ 47/mês.");
