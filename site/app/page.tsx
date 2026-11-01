@@ -434,68 +434,68 @@ export default function Home() {
           <div className="faq-list">
             {[
               [
-                "O que é o Método da Memória Musical®?",
-                "O Método da Memória Musical® é uma forma diferente de complementar seus estudos para concursos de Psicologia. Em vez de depender apenas de PDFs e videoaulas, você também revisa os conteúdos por meio de músicas criadas com base nos principais assuntos cobrados nos editais.",
+                "O que é o Memória Musical para concursos de Psicologia?",
+                "É um aplicativo com músicas criadas a partir de conteúdos de Psicologia cobrados em concursos. Você pode ouvi-las para revisar os temas disponíveis no catálogo e incluir a revisão em diferentes momentos do dia.",
               ],
               [
-                "O Método da Memória Musical® substitui PDFs, videoaulas ou cursos?",
-                "Não.\n\nEle foi desenvolvido para complementar sua preparação. Você continua estudando pelos materiais tradicionais e utiliza as músicas para reforçar e revisar os conteúdos de forma prática durante a rotina.",
+                "O que está incluído no acesso?",
+                "Você recebe acesso ao aplicativo e às músicas e playlists disponíveis no catálogo de Psicologia durante o período do plano contratado. Consulte a lista de conteúdos desta página para conferir os temas disponíveis.",
               ],
               [
-                "Serve para qual concurso de Psicologia?",
-                "EBSERH, tribunais, ministérios públicos, defensorias, prefeituras (CAPS, CRAS, CREAS), secretarias de saúde, Forças Armadas, residências e outros. As playlists cobrem os eixos que mais se repetem nas provas; use sempre junto com o edital do concurso que você vai prestar.",
+                "Para quais concursos o Memória Musical serve?",
+                "Ele pode ser usado como apoio por quem estuda para cargos de Psicologia em concursos da área da saúde, tribunais, prefeituras e outros órgãos públicos. Como cada edital pode cobrar conteúdos diferentes, compare os temas disponíveis no aplicativo com o edital do seu concurso.",
+              ],
+              [
+                "As músicas cobrem todo o conteúdo do meu edital?",
+                "Não necessariamente. O catálogo reúne os conteúdos apresentados nesta página, mas cada concurso pode ter exigências próprias. Use as músicas para revisar os temas disponíveis e acompanhe sempre o edital oficial.",
+              ],
+              [
+                "O aplicativo substitui PDFs, videoaulas ou questões?",
+                "Não. O Memória Musical é um recurso complementar de revisão. Use as músicas junto com seus materiais de estudo, a leitura do edital e a resolução de questões.",
               ],
               [
                 "Como estudar ouvindo música pode ajudar?",
-                "As músicas permitem que você mantenha contato frequente com os conteúdos já estudados, aproveitando momentos em que normalmente não estaria revisando, como no carro, caminhando, fazendo tarefas de casa ou entre um atendimento e outro.",
+                "As músicas oferecem outro formato para retomar os conteúdos. Você pode ouvi-las mais de uma vez e revisar temas durante a rotina. A experiência varia de pessoa para pessoa; o aplicativo não promete memorização automática nem aprovação.",
               ],
               [
-                "Eu me confundo com leis e resoluções. As músicas ajudam nisso?",
-                "Sim.\n\nNúmero, ano e conteúdo de leis e resoluções (como a Lei 10.216, a Resolução CFP 06/2019 e as Leis 8.080 e 8.142) aparecem nas letras de forma repetida, justamente para separar o que costuma se misturar na hora da prova.",
+                "Preciso saber cantar ou ter facilidade para memorizar músicas?",
+                "Não. Você não precisa cantar nem ter experiência musical. Basta ouvir as faixas e usar esse formato como complemento à sua preparação.",
               ],
               [
-                "Funciona para quem trabalha atendendo pacientes?",
-                "Sim.\n\nO método foi pensado para quem tem pouco tempo disponível. Como as músicas podem ser ouvidas em diferentes momentos do dia, fica mais fácil incluir revisões na rotina sem precisar passar horas extras sentada estudando.",
+                "Tenho pouco tempo e trabalho atendendo pacientes. Ainda posso usar?",
+                "Sim. Você pode ouvir nos deslocamentos, em casa ou em momentos livres, quando for seguro e adequado. Assim, pode incluir a revisão em momentos da rotina, sem depender apenas de um horário dedicado para abrir seus materiais.",
               ],
               [
-                "Nunca consegui decorar nada com música. Mesmo assim vale a pena?",
-                "Sim.\n\nVocê não precisa cantar nem ter facilidade musical. As músicas funcionam como uma ferramenta complementar de revisão. A combinação entre ritmo e repetição torna o contato com o conteúdo mais frequente e agradável.",
+                "Posso usar pelo celular e pelo computador?",
+                "Sim. O acesso está disponível pelo celular e pelo computador. Você também pode ouvir as músicas com a tela bloqueada.",
               ],
               [
-                "As músicas são baseadas no edital?",
-                "Sim.\n\nAs músicas são desenvolvidas com base nos assuntos presentes nos editais de concursos de Psicologia, com prioridade para os conteúdos mais recorrentes nas provas. Como cada concurso tem seu recorte, o método deve ser usado como complemento ao estudo direcionado pelo edital do concurso que você pretende prestar.",
+                "Preciso de internet para ouvir as músicas?",
+                "Não. Você pode ouvir as músicas sem estar conectado à internet.",
               ],
               [
-                "Sou recém-formada. Esse método é para mim?",
-                "Sim.\n\nSe você está começando agora, as músicas ajudam a ganhar familiaridade com o vocabulário dos concursos desde o início. E, se já estuda há algum tempo, elas complementam sua rotina de revisões.",
+                "Quando recebo o acesso?",
+                "O acesso é liberado após a confirmação da compra. As instruções serão enviadas para você. Se não encontrar a mensagem, confira a caixa de spam ou fale com o suporte.",
               ],
               [
-                "Tenho pouco tempo para estudar. Ainda vale a pena?",
-                "Sim.\n\nUma das maiores vantagens do método é justamente permitir que você aproveite momentos do dia que normalmente seriam improdutivos para reforçar os conteúdos já estudados.",
+                "Por quanto tempo tenho acesso? A cobrança se renova?",
+                "O período de acesso e as condições de cobrança dependem do plano escolhido. Confira essas informações no checkout antes de finalizar a compra.",
               ],
               [
-                "Posso acessar pelo celular?",
-                "Sim.\n\nVocê poderá acessar a plataforma pelo celular, tablet ou computador, estudando de onde estiver.",
+                "O conteúdo recebe atualizações?",
+                "O catálogo pode receber novas músicas e conteúdos. Consulte as condições do plano escolhido para verificar quais atualizações estão incluídas no seu acesso.",
               ],
               [
-                "O acesso é imediato?",
-                "Sim.\n\nApós a confirmação do pagamento, seu acesso é liberado e você já pode começar a utilizar a plataforma.",
-              ],
-              [
-                "Vou receber atualizações?",
-                "Sempre que novos conteúdos forem adicionados dentro do período de acesso do seu plano, eles ficarão disponíveis na plataforma conforme as condições da oferta.",
-              ],
-              [
-                "E se eu não gostar?",
-                "Você conta com uma garantia de 7 dias.\n\nAssim, poderá conhecer a plataforma e decidir com tranquilidade se o Método da Memória Musical® faz sentido para a sua preparação.",
+                "E se eu comprar e não gostar?",
+                "Você conta com garantia de 7 dias, conforme as condições apresentadas no checkout. Para solicitar ajuda ou verificar como pedir o reembolso, entre em contato com o suporte dentro desse prazo.",
               ],
               [
                 "Em quanto tempo vou perceber resultados?",
-                "Cada pessoa possui uma rotina e um ritmo de aprendizado diferentes.\n\nO Método da Memória Musical® foi criado para facilitar suas revisões e complementar sua preparação, mas o desempenho em concursos depende de diversos fatores, como constância, planejamento e resolução de questões.",
+                "Não existe um prazo igual para todos. O Memória Musical é uma ferramenta complementar, e os resultados dependem da sua rotina e da sua preparação. O acesso não garante aprovação.",
               ],
               [
                 "Como começo depois da compra?",
-                "É simples.\n\n1. Finalize sua compra.\n2. Receba o acesso imediatamente.\n3. Entre na plataforma.\n4. Escolha a playlist do assunto que deseja revisar.\n5. Comece a estudar utilizando o Método da Memória Musical®.",
+                "Após receber as instruções de acesso, entre no aplicativo, escolha uma playlist ou um tema disponível e dê play. Você pode selecionar as músicas de acordo com o conteúdo que está estudando.",
               ],
             ].map(([question, answer], index) => (
               <details key={question}>
