@@ -402,7 +402,7 @@ export default function Home() {
                 data-goatcounter-title="Clique no checkout — Assinatura R$ 47/mês"
                 data-goatcounter-no-session="1"
               >
-                Quero assinar por R$ {precoMensal}/mês
+                Quero acesso à Memória Musical
               </a>
             </article>
           </div>
