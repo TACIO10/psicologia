@@ -131,6 +131,7 @@ export default function Home() {
       <section className="stats" aria-label="O que você recebe">
         <div className="wrap stats-grid">
           {[
+            ["+1.000", "músicas educativas"],
             ["11", "áreas do edital"],
             ["Celular", "e computador"],
             ["Imediato", "acesso após a compra"],
