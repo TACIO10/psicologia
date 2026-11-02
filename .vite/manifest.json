@@ -21,7 +21,7 @@
     ]
   },
   "app/offer-bar.tsx": {
-    "file": "assets/offer-bar-BoCFsezG.js",
+    "file": "assets/offer-bar-CmUFLQaZ.js",
     "name": "offer-bar",
     "src": "app/offer-bar.tsx",
     "isDynamicEntry": true,
@@ -51,7 +51,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "assets/layout-segment-context-w9gZu8Dz.js",
+    "file": "assets/layout-segment-context-BT0z6STJ.js",
     "name": "layout-segment-context",
     "src": "node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -62,7 +62,7 @@
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "assets/index-D9E1YJdx.js",
+    "file": "assets/index-CQuLR8mI.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,

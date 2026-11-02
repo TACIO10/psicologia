@@ -35,14 +35,16 @@
   position: fixed; inset: 0 0 auto; z-index: 50;
   display: flex; align-items: center; justify-content: center;
   min-height: 46px; padding: 8px 16px;
-  background: linear-gradient(90deg, #17c463, var(--green) 45%, #5ef09a);
-  color: var(--green-ink); font-size: 14px; font-weight: 800; text-decoration: none;
-  box-shadow: 0 6px 24px rgba(31,211,107,.28);
+  /* Mesmas cores da barra da PV de Enfermagem: menta chapada (sem degrade),
+     texto verde-escuro e relogio escuro com os numeros em lima. */
+  background: #43d6a0;
+  color: #062a2d; font-size: 14px; font-weight: 800; text-decoration: none;
+  box-shadow: 0 2px 14px rgba(6, 42, 45, .22);
 }
 .offer-bar-inner { display: flex; align-items: center; gap: 10px; white-space: nowrap; }
-.offer-clock { padding: 3px 10px; border-radius: 6px; background: var(--bg); color: var(--lime); font-variant-numeric: tabular-nums; font-size: 15px; font-weight: 800; }
+.offer-clock { padding: 3px 10px; border-radius: 6px; background: #062a2d; color: #d8ff87; font-variant-numeric: tabular-nums; font-size: 15px; font-weight: 900; }
 .offer-sep { opacity: .5; }
-.offer-bar strong { font-weight: 800; }
+.offer-bar strong { font-weight: 900; }
 body { padding-top: 46px; }
 [id] { scroll-margin-top: 58px; }
 

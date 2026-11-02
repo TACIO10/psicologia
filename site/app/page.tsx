@@ -10,7 +10,7 @@ const asset = process.env.PAGES_BASE_PATH ?? "";
 const precoMensal = "47";
 const precoAnualMensal = "20,37";
 const precoAnualVista = "197";
-const precoTexto = `R$ ${precoMensal}/mês`;
+const parcelamentoAnual = `12x R$ ${precoAnualMensal}`;
 // Ancoragem de valor: valor de referência de cada item. Edite em `valorMetodo`
 // e no array `bonuses`; a soma é calculada sozinha.
 const valorMetodo = 97;
@@ -88,7 +88,7 @@ export default function Home() {
   return (
     <main>
       <Reveal />
-      <OfferBar parcelamento={precoTexto} />
+      <OfferBar parcelamento={parcelamentoAnual} />
 
       <section className="hero" id="inicio">
         <nav className="nav wrap">
