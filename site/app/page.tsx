@@ -7,6 +7,8 @@ import { OfferBar } from "./offer-bar";
 const asset = process.env.PAGES_BASE_PATH ?? "";
 
 const precoMensal = "47";
+const precoAnualMensal = "20,37";
+const precoAnualVista = "197";
 const precoTexto = `R$ ${precoMensal}/mês`;
 // Ancoragem de valor: valor de referência de cada item. Edite em `valorMetodo`
 // e no array `bonuses`; a soma é calculada sozinha.
@@ -15,11 +17,13 @@ const formatarReais = (valor: number) => `R$ ${valor.toLocaleString("pt-BR")}`;
 
 // Cole aqui o link do checkout de R$ 47/mês. Enquanto estiver vazio, o botão
 // abre o WhatsApp com a mensagem de assinatura.
-const checkout47 = "https://checkout.payt.com.br/b17b60c3521a34527a4c49d7173e4fa4";
+const checkoutMensal = "https://checkout.payt.com.br/b17b60c3521a34527a4c49d7173e4fa4";
+const checkoutAnual = "https://checkout.payt.com.br/d046eb98258b957a424c4693ae5bdcff";
 const whatsappAssinar =
   "https://wa.me/5516992344060?text=" +
   encodeURIComponent("Olá! Quero assinar a Memória Musical para concursos de Psicologia por R$ 47/mês.");
-const checkoutUrl = checkout47 || whatsappAssinar;
+const urlMensal = checkoutMensal || whatsappAssinar;
+const urlAnual = checkoutAnual || whatsappAssinar;
 
 const subjects = [
   { title: "Ética e Legislação Profissional", text: "O tema que aparece em praticamente todo edital, e onde pequenos detalhes decidem a questão.", topics: ["Código de Ética (Res. CFP 010/2005)", "Princípios fundamentais", "Lei 4.119/1962", "Lei 5.766/1971 e Sistema Conselhos", "Sigilo e suas exceções"] },
@@ -329,7 +333,7 @@ export default function Home() {
         <div className="wrap">
           <div className="section-heading split-heading">
             <div>
-              <span className="eyebrow">Incluído na assinatura</span>
+              <span className="eyebrow">Incluído no plano anual</span>
               <h2>5 bônus para transformar revisão em preparação.</h2>
             </div>
             <p>Ouça, entenda cada letra, siga o cronograma, pratique e mantenha o ritmo com outros alunos.</p>
@@ -345,7 +349,7 @@ export default function Home() {
                   <div className="bonus-price">
                     <s>De {formatarReais(bonus.value)}</s>
                     <strong>por R$ 0</strong>
-                    <small>na assinatura</small>
+                    <small>no plano anual</small>
                   </div>
                 </div>
               </article>
@@ -353,7 +357,7 @@ export default function Home() {
           </div>
 
           <div className="value-stack">
-            <span className="value-title">Tudo o que você recebe na assinatura</span>
+            <span className="value-title">Tudo o que você recebe no plano anual</span>
             <ul>
               <li><span>Método da Memória Musical · todas as playlists de Psicologia</span><s>{formatarReais(valorMetodo)}</s></li>
               {bonuses.map((bonus) => (
@@ -371,18 +375,41 @@ export default function Home() {
       <section className="pricing section" id="oferta">
         <div className="wrap">
           <div className="section-heading center">
-            <span className="eyebrow">Seu acesso</span>
+            <span className="eyebrow">Escolha seu acesso</span>
             <h2>Comece hoje a estudar com músicas.</h2>
-            <p>Um único plano, com todo o método e todos os bônus.</p>
+            <p>Dois jeitos de começar. Os bônus vêm no plano anual.</p>
           </div>
 
-          <div className="price-grid single-plan">
-            <article className="price-card featured">
-              <span className="price-ribbon complete-ribbon">Acesso completo</span>
+          <div className="price-grid">
+            <article className="price-card essential-plan">
+              <span className="price-ribbon essential-ribbon">Para começar</span>
               <span className="plan-tag">Assinatura mensal</span>
-              <h3>Todo o método e todos os bônus</h3>
+              <h3>Acesso ao Método da Memória Musical</h3>
               <div className="annual-price"><small>R$</small><strong>{precoMensal}</strong><span>/mês</span></div>
               <p className="annual-payment">cobrança mensal recorrente · garantia de 7 dias</p>
+              <ul>
+                <li>✓ Todas as playlists de Psicologia</li>
+                <li>✓ Conteúdos para concursos e Residência</li>
+                <li>✓ Acesso pelo celular e computador</li>
+              </ul>
+              <a
+                className="button price-button essential-button"
+                href={urlMensal}
+                data-goatcounter-click="psi-checkout-mensal-47"
+                data-goatcounter-title="Clique no checkout — Assinatura R$ 47/mês"
+                data-goatcounter-no-session="1"
+              >
+                Assinar mensal por R$ {precoMensal}
+              </a>
+            </article>
+
+            <article className="price-card featured">
+              <span className="price-ribbon complete-ribbon">Melhor escolha</span>
+              <span className="plan-tag">Anual · Plano Completo</span>
+              <h3>Todo o método e todos os bônus</h3>
+              <div className="annual-price"><small>R$</small><strong>{precoAnualMensal}</strong><span>/mês</span></div>
+              <p className="annual-payment">{`12x de R$ ${precoAnualMensal} no cartão · ou R$ ${precoAnualVista} à vista`}</p>
+              <span className="value-badge">Os 5 bônus inclusos</span>
               <ul>
                 <li>✓ Todas as playlists de Psicologia</li>
                 <li>✓ Conteúdos para concursos e Residência</li>
@@ -397,12 +424,12 @@ export default function Home() {
               </ul>
               <a
                 className="button primary price-button"
-                href={checkoutUrl}
-                data-goatcounter-click="psi-checkout-47"
-                data-goatcounter-title="Clique no checkout — Assinatura R$ 47/mês"
+                href={urlAnual}
+                data-goatcounter-click="psi-checkout-anual-197"
+                data-goatcounter-title="Clique no checkout — Plano Anual R$ 197"
                 data-goatcounter-no-session="1"
               >
-                Quero acesso à Memória Musical
+                Quero o Plano Completo
               </a>
             </article>
           </div>
