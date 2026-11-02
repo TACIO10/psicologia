@@ -125,6 +125,7 @@ h3 { font-size: 24px; }
 .hero-copy { min-width: 0; }
 .lead { max-width: 640px; margin-bottom: 30px; color: var(--soft); font-size: 19px; }
 .hero-video { width: 100%; max-width: 400px; margin: 28px auto 30px; overflow: hidden; border: 1px solid var(--border-2); border-radius: 18px; background: #000; box-shadow: 0 30px 70px -20px rgba(0,0,0,.7), 0 0 0 6px rgba(255,255,255,.03); }
+.hero-video { width: 100%; max-width: 400px; margin: 0 auto 30px; overflow: hidden; border: 1px solid rgba(255,255,255,.16); border-radius: 16px; background: #000; box-shadow: 0 22px 55px rgba(0,0,0,.34); }
 .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
 .microcopy { color: var(--muted); font-size: 13px; }
 .hero-proof { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; color: var(--soft); font-size: 12px; font-weight: 700; }

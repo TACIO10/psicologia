@@ -42,6 +42,9 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
         />
+        {/* Abre a conexao com o host do player antes de ele ser pedido. */}
+        <link rel="preconnect" href="https://scripts.converteai.net" crossOrigin="" />
+        <link rel="preconnect" href="https://images.converteai.net" crossOrigin="" />
         <meta name="theme-color" content="#04140d" />
         <style dangerouslySetInnerHTML={{ __html: globalStyles }} />
         {/* UTMify: repassa as UTMs para o checkout (carrega cdn.utmify.com.br/scripts/utms/latest.js). */}

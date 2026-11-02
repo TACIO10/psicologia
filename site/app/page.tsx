@@ -2,6 +2,7 @@ import { AppDemo } from "./app-demo";
 import { HeroPhones } from "./hero-phones";
 import { Reveal } from "./reveal";
 import { OfferBar } from "./offer-bar";
+import { VturbPlayer } from "./vturb-player";
 
 // Vazio no build padrao; "/psicologia" no build do GitHub Pages.
 const asset = process.env.PAGES_BASE_PATH ?? "";
@@ -109,6 +110,7 @@ export default function Home() {
               Comece a usar nosso app de música e pare de esquecer ou confundir leis,
               resoluções, autores e conceitos da sua prova de Psicologia.
             </p>
+            <VturbPlayer />
             <div className="hero-actions">
               <button className="button primary" type="button" data-price-jump>
                 <span aria-hidden="true">▶</span> Quero memorizar ouvindo música · Acesso imediato
