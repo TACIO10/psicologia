@@ -11,6 +11,21 @@ const precoMensal = "47";
 const precoAnualMensal = "20,37";
 const precoAnualVista = "197";
 const parcelamentoAnual = `12x R$ ${precoAnualMensal}`;
+
+const testimonials = [
+  {
+    image: `${asset}/media/depoimento-marcia.webp`,
+    alt: "Depoimento de aluna psicóloga que passou a fixar os artigos de Ética ouvindo as músicas no carro",
+  },
+  {
+    image: `${asset}/media/depoimento-didda.webp`,
+    alt: "Depoimento de aluna que parou de confundir as abordagens e os autores com uma música por autor",
+  },
+  {
+    image: `${asset}/media/depoimento-denise.webp`,
+    alt: "Depoimento de aluna que aproveita trânsito e academia para revisar cerca de 50 minutos por dia",
+  },
+];
 // Ancoragem de valor: valor de referência de cada item. Edite em `valorMetodo`
 // e no array `bonuses`; a soma é calculada sozinha.
 const valorMetodo = 97;
@@ -144,6 +159,29 @@ export default function Home() {
               <span>{label}</span>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="testimonials section soft">
+        <div className="wrap">
+          <div className="section-heading center">
+            <span className="eyebrow">Experiência de alunas</span>
+            <h2>Veja os relatos de quem incluiu as músicas na rotina.</h2>
+          </div>
+          <div className="testimonial-grid">
+            {testimonials.map(({ image, alt }) => (
+              <figure key={image}>
+                <img
+                  src={image}
+                  alt={alt}
+                  width="853"
+                  height="1516"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 
