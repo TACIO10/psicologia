@@ -3,6 +3,7 @@ import { HeroPhones } from "./hero-phones";
 import { Reveal } from "./reveal";
 import { OfferBar } from "./offer-bar";
 import { VturbPlayer } from "./vturb-player";
+import { partesDoTitulo, varianteAtual } from "./headlines";
 
 // Vazio no build padrao; "/psicologia" no build do GitHub Pages.
 const asset = process.env.PAGES_BASE_PATH ?? "";
@@ -117,14 +118,15 @@ export default function Home() {
         <div className="hero-grid wrap">
           <div className="hero-copy">
             <h1>
-              Quer passar na <strong>EBSERH, Tribunais, Prefeituras ou
-              Secretarias de Saúde?</strong> Descubra como memorizar os assuntos de
-              Psicologia que realmente são <strong>cobrados nas Bancas!</strong>
+              {partesDoTitulo(varianteAtual.titulo).map((parte, i) =>
+                parte.destaque ? (
+                  <strong key={i}>{parte.texto}</strong>
+                ) : (
+                  <span key={i}>{parte.texto}</span>
+                ),
+              )}
             </h1>
-            <p className="lead">
-              Comece a usar nosso app de música e pare de esquecer ou confundir leis,
-              resoluções, autores e conceitos da sua prova de Psicologia.
-            </p>
+            <p className="lead">{varianteAtual.subtitulo}</p>
             <VturbPlayer />
             <div className="hero-actions">
               <button className="button primary" type="button" data-price-jump>

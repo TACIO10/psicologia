@@ -7,6 +7,12 @@ import globalStyles from "./globals.css?inline";
 const asset = process.env.PAGES_BASE_PATH ?? "";
 const ogImage = `${asset}/og.png`;
 
+// Variacoes de headline (b, c, d) ficam fora do Google: sao quase identicas a
+// principal, e quatro paginas iguais indexadas atrapalhariam a que importa.
+// Vai como <meta> escrita a mao porque o campo `robots` do metadata nao sai
+// no HTML gerado pelo vinext.
+const variante = process.env.PAGES_VARIANTE ?? "";
+
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.PAGES_SITE_URL ??
@@ -46,6 +52,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://scripts.converteai.net" crossOrigin="" />
         <link rel="preconnect" href="https://images.converteai.net" crossOrigin="" />
         <meta name="theme-color" content="#04140d" />
+        {variante ? <meta name="robots" content="noindex, follow" /> : null}
         <style dangerouslySetInnerHTML={{ __html: globalStyles }} />
         {/* UTMify: repassa as UTMs para o checkout (carrega cdn.utmify.com.br/scripts/utms/latest.js). */}
         <script
