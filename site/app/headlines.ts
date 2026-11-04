@@ -39,20 +39,23 @@ export const variantes: Variante[] = [
   },
   {
     slug: "b",
-    nome: "B",
-    titulo: tituloPadrao,
+    nome: "B (velocidade)",
+    titulo:
+      "Memorize os assuntos mais cobrados dos concursos de Psicologia *10x mais rápido*",
     subtitulo: subtituloPadrao,
   },
   {
     slug: "c",
-    nome: "C",
-    titulo: tituloPadrao,
+    nome: "C (facilidade)",
+    titulo:
+      "Aprenda os principais temas do concurso de Psicólogo *em 3 minutos*, sem ler um PDF ou ver um vídeo.",
     subtitulo: subtituloPadrao,
   },
   {
     slug: "d",
-    nome: "D",
-    titulo: tituloPadrao,
+    nome: "D (história)",
+    titulo:
+      "Como uma psicóloga clínica sem tempo para estudar *passou no concurso em 3 meses*, revisando tudo em músicas de 3 minutos.",
     subtitulo: subtituloPadrao,
   },
 ];
