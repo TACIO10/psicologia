@@ -460,8 +460,8 @@ export default function Home() {
               ))}
             </ul>
             <div className="value-total">
-              <span>No anual: R$ {precoAnualVista}, com os 5 bônus</span>
-              <strong>{`12x R$ ${precoAnualMensal}`}</strong>
+              <span>Somando tudo, você pagaria</span>
+              <s>{formatarReais(12 * Number(precoMensal) + bonuses.reduce((total, bonus) => total + bonus.value, 0))}</s>
             </div>
           </div>
         </div>
