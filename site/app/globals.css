@@ -599,3 +599,22 @@ footer { padding: 45px 0; border-top: 1px solid var(--border); background: #020c
 
 /* Plano único */
 .price-grid.single-plan { grid-template-columns: minmax(0, 520px); }
+
+/* Ajustes de copy (review) */
+.no-blame { max-width: 680px; margin: 22px auto 0; padding: 18px 22px; border-left: 3px solid var(--green); border-radius: 0 14px 14px 0; background: rgba(34,197,94,.07); color: var(--text); font-size: 18px; font-weight: 600; text-align: left; }
+.refrao { margin-bottom: 22px; padding: 22px 24px; border-radius: 20px; background: rgba(212,255,106,.07); border: 1px solid rgba(212,255,106,.28); }
+.refrao span { display: block; margin-bottom: 8px; color: var(--lime); font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.refrao p { margin: 0; color: var(--text); }
+.proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 920px; margin: 36px auto 0; }
+.proof-card { margin: 0; padding: 26px; border-radius: 22px; border: 1px solid var(--border-2); background: rgba(255,255,255,.03); }
+.proof-card.lyric { border-color: rgba(212,255,106,.35); }
+.proof-tag { display: block; margin-bottom: 14px; color: var(--green); font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.proof-card blockquote { margin: 0; font-size: 19px; line-height: 1.55; color: var(--text); }
+.proof-card.lyric blockquote { font-style: italic; }
+.proof-card mark { background: rgba(212,255,106,.22); color: var(--lime); padding: 0 3px; border-radius: 4px; }
+.proof-note { margin-top: 18px; text-align: center; color: var(--muted); font-size: 14px; }
+.desire { padding: 56px 0; background: linear-gradient(90deg, rgba(34,197,94,.12), rgba(212,255,106,.10)); border-block: 1px solid var(--border-2); text-align: center; }
+.desire p { margin: 0; font-family: var(--display); font-size: clamp(24px, 3.2vw, 34px); line-height: 1.25; font-weight: 700; color: var(--text); }
+.desire strong { color: var(--lime); }
+.value-total strong { flex: none; font-size: 30px; color: var(--lime); font-variant-numeric: tabular-nums; }
+@media (max-width: 720px) { .proof-grid { grid-template-columns: 1fr; } .value-total { flex-direction: column; } }

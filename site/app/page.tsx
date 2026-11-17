@@ -30,6 +30,22 @@ const testimonials = [
 // Ancoragem de valor: valor de referência de cada item. Edite em `valorMetodo`
 // e no array `bonuses`; a soma é calculada sozinha.
 const valorMetodo = 97;
+// Bloco "a letra é o conteúdo". Cole em `trecho` um pedaço REAL da letra da faixa;
+// enquanto estiver vazio, o bloco não aparece na página. Marque entre *asteriscos*
+// as palavras que se repetem nos dois textos.
+const letraProva = {
+  faixa: "Cuidado em Liberdade",
+  trecho: "",
+  fonte: "Lei 10.216/2001 · Art. 4º",
+  original:
+    "A *internação*, em qualquer de suas modalidades, só será indicada quando os *recursos extra-hospitalares* se mostrarem *insuficientes*.",
+};
+const destacar = (texto: string) =>
+  texto
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/\*([^*]+)\*/g, "<mark>$1</mark>");
+
 const formatarReais = (valor: number) => `R$ ${valor.toLocaleString("pt-BR")}`;
 
 // Cole aqui o link do checkout de R$ 47/mês. Enquanto estiver vazio, o botão
@@ -151,7 +167,7 @@ export default function Home() {
         <div className="wrap stats-grid">
           {[
             ["+1.000", "músicas educativas"],
-            ["11", "áreas do edital"],
+            ["12", "áreas do edital"],
             ["Celular", "e computador"],
             ["Imediato", "acesso após a compra"],
             ["7 dias", "de garantia"],
@@ -197,6 +213,10 @@ export default function Home() {
             O problema quase nunca é falta de estudo: é encontrar tempo e energia
             para reencontrar a matéria vezes suficientes para ela ficar acessível.
           </p>
+          <p className="no-blame">
+            Você sabia a resposta. E, na prova, ela não veio. Isso não é falta de
+            capacidade: é conteúdo demais, lido cansada, sem nada que puxe ele de volta.
+          </p>
         </div>
       </section>
 
@@ -207,6 +227,15 @@ export default function Home() {
             <h2>Você não precisa encontrar mais horas. Precisa reencontrar a matéria mais vezes.</h2>
           </div>
           <div className="mechanism-copy">
+            <div className="refrao">
+              <span>O Efeito Refrão</span>
+              <p>
+                Você sabe de cor aquela música que nunca quis decorar. Ninguém sentou
+                pra estudar ela: ela grudou porque repetiu com ritmo. O Memória Musical
+                usa isso a seu favor. A letra é o conteúdo: Lei 10.216, CRAS e CREAS,
+                critérios do DSM. Quando o refrão volta na sua cabeça, a matéria volta junto.
+              </p>
+            </div>
             <p>
               O Método da Memória Musical transforma conteúdos recorrentes dos
               concursos de Psicologia em faixas organizadas por disciplina.
@@ -227,6 +256,29 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {letraProva.trecho && (
+        <section className="proof section" aria-labelledby="prova-title">
+          <div className="wrap">
+            <div className="section-heading center">
+              <span className="eyebrow">A letra é o conteúdo</span>
+              <h2 id="prova-title">Aqui você não estuda com música. A música é o estudo.</h2>
+              <p>Compare o trecho da faixa com o texto original. As palavras destacadas são as mesmas.</p>
+            </div>
+            <div className="proof-grid">
+              <figure className="proof-card lyric">
+                <span className="proof-tag">♪ Trecho da faixa · {letraProva.faixa}</span>
+                <blockquote dangerouslySetInnerHTML={{ __html: destacar(letraProva.trecho) }} />
+              </figure>
+              <figure className="proof-card source">
+                <span className="proof-tag">{letraProva.fonte}</span>
+                <blockquote dangerouslySetInnerHTML={{ __html: destacar(letraProva.original) }} />
+              </figure>
+            </div>
+            <p className="proof-note">Exemplo do bônus Letras comentadas, incluído no plano anual.</p>
+          </div>
+        </section>
+      )}
 
       <section className="listen section" id="experimente">
         <div className="wrap narrow">
@@ -400,18 +452,27 @@ export default function Home() {
           </div>
 
           <div className="value-stack">
-            <span className="value-title">Tudo o que você recebe no plano anual</span>
+            <span className="value-title">Faça a conta do ano</span>
             <ul>
-              <li><span>Método da Memória Musical · todas as playlists de Psicologia</span><s>{formatarReais(valorMetodo)}</s></li>
+              <li><span>12 meses no plano mensal (12 × R$ {precoMensal})</span><s>{formatarReais(12 * Number(precoMensal))}</s></li>
               {bonuses.map((bonus) => (
                 <li key={bonus.title}><span>Bônus {bonus.number} · {bonus.title}</span><s>{formatarReais(bonus.value)}</s></li>
               ))}
             </ul>
             <div className="value-total">
-              <span>Somando tudo, você pagaria</span>
-              <s>{formatarReais(valorMetodo + bonuses.reduce((total, bonus) => total + bonus.value, 0))}</s>
+              <span>No anual: R$ {precoAnualVista}, com os 5 bônus</span>
+              <strong>{`12x R$ ${precoAnualMensal}`}</strong>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="desire" aria-label="Por que você faz concurso">
+        <div className="wrap narrow">
+          <p>
+            Exercer a Psicologia com <strong>salário que cai todo mês</strong>, no CAPS,
+            no hospital, na prefeitura, sem largar o que você ama.
+          </p>
         </div>
       </section>
 
@@ -505,67 +566,75 @@ export default function Home() {
             {[
               [
                 "O que é o Memória Musical para concursos de Psicologia?",
-                "É um aplicativo com músicas criadas a partir de conteúdos de Psicologia cobrados em concursos. Você pode ouvi-las para revisar os temas disponíveis no catálogo e incluir a revisão em diferentes momentos do dia.",
+                "É um aplicativo com músicas feitas a partir do que mais cai nos concursos de Psicologia. A letra é o próprio conteúdo: leis, resoluções, autores e critérios do DSM. Você dá o play e revisa em qualquer momento do dia.",
               ],
               [
                 "O que está incluído no acesso?",
-                "Você recebe acesso ao aplicativo e às músicas e playlists disponíveis no catálogo de Psicologia durante o período do plano contratado. Consulte a lista de conteúdos desta página para conferir os temas disponíveis.",
+                "Todas as músicas e playlists de Psicologia do catálogo, no celular e no computador. No plano anual você também leva os 5 bônus: checklist dos assuntos mais cobrados, banco de questões comentadas, comunidade de alunos, letras comentadas e cronograma de 30 dias.",
               ],
               [
                 "Para quais concursos o Memória Musical serve?",
-                "Ele pode ser usado como apoio por quem estuda para cargos de Psicologia em concursos da área da saúde, tribunais, prefeituras e outros órgãos públicos. Como cada edital pode cobrar conteúdos diferentes, compare os temas disponíveis no aplicativo com o edital do seu concurso.",
+                "Para cargos de Psicologia na saúde (EBSERH, secretarias, CAPS), tribunais, prefeituras e outros órgãos públicos. Como cada edital tem seu recorte, compare os temas do app com o edital do seu concurso.",
               ],
               [
                 "As músicas cobrem todo o conteúdo do meu edital?",
-                "Não necessariamente. O catálogo reúne os conteúdos apresentados nesta página, mas cada concurso pode ter exigências próprias. Use as músicas para revisar os temas disponíveis e acompanhe sempre o edital oficial.",
+                "Não necessariamente. O catálogo reúne os temas listados nesta página, que são os que mais se repetem nas provas. Cada concurso pode cobrar algo a mais, então acompanhe sempre o edital oficial.",
               ],
               [
-                "O aplicativo substitui PDFs, videoaulas ou questões?",
-                "Não. O Memória Musical é um recurso complementar de revisão. Use as músicas junto com seus materiais de estudo, a leitura do edital e a resolução de questões.",
+                "Isso não é coisa de ENEM? Não é infantil?",
+                "Não. As letras trazem o conteúdo no nível do concurso: número e ano de lei, artigo de resolução, critério diagnóstico do DSM‑5‑TR. O formato é leve, mas o que você revisa é exatamente o que a banca cobra.",
+              ],
+              [
+                "Música não atrapalha a concentração?",
+                "Aqui você não estuda com música de fundo. A música é o estudo: a letra é o conteúdo. Você não divide a atenção entre duas coisas, porque o que você está ouvindo é a própria matéria.",
               ],
               [
                 "Como estudar ouvindo música pode ajudar?",
-                "As músicas oferecem outro formato para retomar os conteúdos. Você pode ouvi-las mais de uma vez e revisar temas durante a rotina. A experiência varia de pessoa para pessoa; o aplicativo não promete memorização automática nem aprovação.",
+                "Pelo mesmo motivo que você sabe de cor aquela música que nunca quis decorar: ritmo e repetição fazem o conteúdo grudar. Quando o refrão volta na cabeça, a matéria volta junto. Cada pessoa tem seu ritmo, e o app complementa o seu estudo, sem prometer aprovação.",
+              ],
+              [
+                "Serve pra mim? Tenho TDAH, ou tenho mais de 40 anos.",
+                "Serve como ferramenta de revisão para qualquer pessoa que estuda para concurso, em qualquer idade. Faixas curtas, que você pode repetir quantas vezes quiser, costumam ser mais fáceis de encaixar na rotina do que blocos longos de leitura. Se você tem TDAH, use o app como complemento ao acompanhamento e ao método que já funcionam para você.",
               ],
               [
                 "Preciso saber cantar ou ter facilidade para memorizar músicas?",
-                "Não. Você não precisa cantar nem ter experiência musical. Basta ouvir as faixas e usar esse formato como complemento à sua preparação.",
+                "Não. Você não precisa cantar nem ter experiência musical. É só ouvir as faixas.",
               ],
               [
                 "Tenho pouco tempo e trabalho atendendo pacientes. Ainda posso usar?",
-                "Sim. Você pode ouvir nos deslocamentos, em casa ou em momentos livres, quando for seguro e adequado. Assim, pode incluir a revisão em momentos da rotina, sem depender apenas de um horário dedicado para abrir seus materiais.",
+                "Sim, foi pensado para isso. Você ouve no trânsito, em casa ou entre um atendimento e outro, sem precisar de um horário só para abrir os materiais.",
               ],
               [
                 "Posso usar pelo celular e pelo computador?",
-                "Sim. O acesso está disponível pelo celular e pelo computador. Você também pode ouvir as músicas com a tela bloqueada.",
+                "Sim. E dá para ouvir com a tela bloqueada.",
               ],
               [
                 "Preciso de internet para ouvir as músicas?",
-                "Não. Você pode ouvir as músicas sem estar conectado à internet.",
+                "Não. Você pode ouvir as músicas sem estar conectada à internet.",
               ],
               [
                 "Quando recebo o acesso?",
-                "O acesso é liberado após a confirmação da compra. As instruções serão enviadas para você. Se não encontrar a mensagem, confira a caixa de spam ou fale com o suporte.",
+                "Logo depois que o pagamento é confirmado. As instruções chegam no seu e-mail; se não encontrar, olhe também a caixa de spam.",
               ],
               [
                 "Por quanto tempo tenho acesso? A cobrança se renova?",
-                "O período de acesso e as condições de cobrança dependem do plano escolhido. Confira essas informações no checkout antes de finalizar a compra.",
+                "O mensal renova automaticamente todo mês, por R$ 47. O anual vale por 12 meses: R$ 197 à vista ou 12x de R$ 20,37.",
               ],
               [
                 "O conteúdo recebe atualizações?",
-                "O catálogo pode receber novas músicas e conteúdos. Consulte as condições do plano escolhido para verificar quais atualizações estão incluídas no seu acesso.",
+                "Sim. Novas músicas e temas entram no catálogo e ficam disponíveis enquanto o seu plano estiver ativo.",
               ],
               [
                 "E se eu comprar e não gostar?",
-                "Você conta com garantia de 7 dias, conforme as condições apresentadas no checkout. Para solicitar ajuda ou verificar como pedir o reembolso, entre em contato com o suporte dentro desse prazo.",
+                "Você tem 7 dias de garantia. Se não fizer sentido para você, peça o reembolso dentro desse prazo.",
               ],
               [
                 "Em quanto tempo vou perceber resultados?",
-                "Não existe um prazo igual para todos. O Memória Musical é uma ferramenta complementar, e os resultados dependem da sua rotina e da sua preparação. O acesso não garante aprovação.",
+                "Depende da sua rotina e da sua preparação. Quanto mais vezes você reencontra a matéria, mais fácil ela volta na prova. O app é um complemento ao seu estudo e não garante aprovação.",
               ],
               [
                 "Como começo depois da compra?",
-                "Após receber as instruções de acesso, entre no aplicativo, escolha uma playlist ou um tema disponível e dê play. Você pode selecionar as músicas de acordo com o conteúdo que está estudando.",
+                "Entre no app com as instruções que chegam no seu e-mail, escolha a playlist do tema que você está estudando e dê play.",
               ],
             ].map(([question, answer], index) => (
               <details key={question}>
