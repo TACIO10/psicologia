@@ -1,6 +1,6 @@
 {
   "../../psi-src/node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "assets/layout-segment-context-BLlyNENc.js",
+    "file": "assets/layout-segment-context-7vH26pBR.js",
     "name": "layout-segment-context",
     "src": "../../psi-src/node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -41,8 +41,18 @@
       "_framework-DjPHiq1u.js"
     ]
   },
+  "app/vsl-delay.tsx": {
+    "file": "assets/vsl-delay-CGsmGn0m.js",
+    "name": "vsl-delay",
+    "src": "app/vsl-delay.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-S-ySWqyJ.js",
+      "_framework-DjPHiq1u.js"
+    ]
+  },
   "app/vturb-player.tsx": {
-    "file": "assets/vturb-player-DBKlIaqm.js",
+    "file": "assets/vturb-player-BRa-HdBv.js",
     "name": "vturb-player",
     "src": "app/vturb-player.tsx",
     "isDynamicEntry": true,
@@ -52,7 +62,7 @@
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "assets/index-B2GrEJiv.js",
+    "file": "assets/index-CY2sfOR3.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
@@ -62,6 +72,7 @@
     ],
     "dynamicImports": [
       "app/reveal.tsx",
+      "app/vsl-delay.tsx",
       "app/vturb-player.tsx",
       "app/app-demo.tsx",
       "virtual:vinext-app-browser-entry",

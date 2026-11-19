@@ -3,6 +3,7 @@ import { HeroPhones } from "./hero-phones";
 import { Reveal } from "./reveal";
 import { OfferBar } from "./offer-bar";
 import { VturbPlayer } from "./vturb-player";
+import { VslDelay } from "./vsl-delay";
 import { partesDoTitulo, varianteAtual } from "./headlines";
 
 // Vazio no build padrao; "/psicologia" no build do GitHub Pages.
@@ -120,7 +121,10 @@ export default function Home() {
   return (
     <main>
       <Reveal />
-      <OfferBar parcelamento={parcelamentoAnual} />
+      <VslDelay />
+      <div className="vsl-delay">
+        <OfferBar parcelamento={parcelamentoAnual} />
+      </div>
 
       <section className="hero" id="inicio">
         <nav className="nav wrap">
@@ -128,7 +132,7 @@ export default function Home() {
             <span className="brand-mark">♪</span>
             <span>MEMÓRIA MUSICAL</span>
           </a>
-          <a className="nav-link" href="#oferta">Ver planos</a>
+          <a className="nav-link vsl-delay" href="#oferta">Ver planos</a>
         </nav>
 
         <div className="hero-grid wrap">
@@ -144,25 +148,26 @@ export default function Home() {
             </h1>
             <p className="lead">{varianteAtual.subtitulo}</p>
             <VturbPlayer />
-            <div className="hero-actions">
+            <div className="hero-actions vsl-delay">
               <button className="button primary" type="button" data-price-jump>
                 <span aria-hidden="true">▶</span> Quero memorizar ouvindo música · Acesso imediato
               </button>
               <span className="microcopy">Garantia de 7 dias · Comece hoje</span>
             </div>
-            <div className="hero-proof">
+            <div className="hero-proof vsl-delay">
               <span>✓ Acesso imediato</span>
               <span>✓ Celular e computador</span>
               <span>✓ Garantia de 7 dias</span>
             </div>
           </div>
 
-          <div className="hero-visual">
+          <div className="hero-visual vsl-delay-mobile">
             <HeroPhones />
           </div>
         </div>
       </section>
 
+      <div className="vsl-delay">
       <section className="stats" aria-label="O que você recebe">
         <div className="wrap stats-grid">
           {[
@@ -653,6 +658,7 @@ export default function Home() {
           <p className="legal">Este produto é um recurso complementar de revisão e não garante aprovação. Resultados variam conforme dedicação, rotina de estudos e outros fatores individuais.</p>
         </div>
       </footer>
+      </div>
     </main>
   );
 }

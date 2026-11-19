@@ -618,3 +618,7 @@ footer { padding: 45px 0; border-top: 1px solid var(--border); background: #020c
 .desire strong { color: var(--lime); }
 .value-total strong { flex: none; font-size: 30px; color: var(--lime); font-variant-numeric: tabular-nums; }
 @media (max-width: 720px) { .proof-grid { grid-template-columns: 1fr; } .value-total { flex-direction: column; } }
+
+/* Delay do VSL: some até a chamada aos 1:03 (ver app/vsl-delay.tsx) */
+html:not(.vsl-liberado) .vsl-delay { display: none !important; }
+@media (max-width: 900px) { html:not(.vsl-liberado) .vsl-delay-mobile { display: none !important; } }
